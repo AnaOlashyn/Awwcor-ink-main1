@@ -236,6 +236,7 @@ h6 {
 
 .who__text {
 	text-align: justify;
+	text-align-last: center;
 	font-weight: 300;
 	color: #6b7c93;
 	margin: 0 15px 50px;
@@ -330,6 +331,8 @@ h6 {
 .mission__text {
 	font-weight: 300;
 	color: #6b7c93;
+	text-align: justify;
+    text-align-last: center
 }
 
 /*=====footer=====*/
@@ -349,29 +352,51 @@ h6 {
 .footer__inner {
 	display: flex;
 	flex-wrap: wrap;
+	align-items: flex-start;
+	justify-content: space-around;
 }
 
-.fotter__block {
+.footer__block {
 	width: 33.33333%;
 	/*margin: auto 0;*/
 	padding: 0 15px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 85px;
+}
 
+.footer__content {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 100%;
 }
 
 .footer__title {
-	margin-top: -20px;
-	margin-bottom: 10px;
-	font-size: 14;
-	font-weight: 500;
+	font-size: 18px;
+	font-weight: 400;
 	text-transform: uppercase;
+	text-align: left;
 	color: #23262a;
 }
 
-.fotter__address {
-	font-size: 14px;
+.footer__item {
+	font-size: 13px;
 	line-height: 1.5;
+	text-align: left;
 	color: #23262a;
-	margin-bottom: 20px;
+	border-bottom: 2px solid #ffffff;
+	cursor: pointer;
+}
+
+.footer__item:hover {
+	border-bottom: 2px solid #42cc77;
+}
+
+.footer__title_social {
+	text-align: right;
 }
 
 
@@ -379,17 +404,16 @@ h6 {
 
 .social {
 	display: flex;
-	justify-content: center;
-
+	justify-content: flex-end;
 }
 
 .social__item {
 	display: flex;
 	justify-content: center;
 	align-items: stretch;
-	width: 50px;
-	height: 50px;
-	margin-right: 25px;
+	width: 25px;
+	height: 25px;
+	margin-left: 5px;
 	background-color: #fff;
 
 	transition: background .1s linear;
@@ -397,14 +421,19 @@ h6 {
 
 .social__icon {
 	display: block;
-	margin: 0 auto;
-	height: 35px;
-	fill: #c6cacc;
-	transition: fill .1s linear;
+	height: 25px;
 }
 
-.social__icon:hover {
-	fill: #36aaca;
+.social__icon_linkedin:hover {
+	content: url("./assets/icons/LinkedIn_Hover-19.svg");
+}
+
+.social__icon_facebook:hover {
+	content: url("./assets/icons/Facebook_Hover-20.svg");
+}
+
+.social__icon_instagram:hover {
+	content: url("./assets/icons/Instagram_Hover.svg");
 }
 
 .btn__footer {
@@ -413,9 +442,9 @@ h6 {
 	margin: 0 15px;
 	position: relative;
 
-	color: #23262a;
+	color: #6b7c93;
 	letter-spacing: .1em;
-	font-weight: 500;
+	font-weight: 700;
 	text-decoration: none;
 	text-transform: uppercase;
 	transition: color .2s linear;
@@ -451,13 +480,12 @@ h6 {
 
 
 .copyright {
-	background-color: #e2ffdf;
+	margin-top: 100px;
 	padding: 10px 0;
 }
 
 .copyright_text {
 	text-align: center;
-	color: #23262a;
 	font-size: 14px;
 	line-height: 1.5;
 }
@@ -514,7 +542,7 @@ h6 {
 
 	.intro__inner {
 		flex-wrap: nowrap;
-		flex-direction: column;
+		flex-direction: column-reverse;
 		align-items: center;
 		text-align: center;
 	}
@@ -563,13 +591,35 @@ h6 {
 		padding: 0 30px;
 	}
 
-	.footer__inner {
-		display: flex;
-		flex-wrap: nowrap;
-		flex-direction: column;
+	.footer:before {
+		margin: 55px 0;
 	}
 
-	.fotter__block {
+	.btn__footer {
+		margin-bottom: 15px;
+	}
+
+	.footer__title {
+		font-size: 18px;
+		margin-bottom: 10px;
+		text-align: center;
+	}
+
+	.footer__item {
+		font-size: 12px;
+		text-align: center;
+	}
+
+	.footer__item:last-child {
+		margin-bottom: 20px;
+	}
+
+	.footer__inner {
+		flex-wrap: nowrap;
+	}
+
+
+	.footer__block {
 		width: 100%;
 		/*margin: auto 0;*/
 		padding: 0 15px;
@@ -590,12 +640,9 @@ h6 {
 		background: url(assets/bg/bg_pricing.jpg) bottom no-repeat;
 	}
 
-	.footer:before {
-		margin: 55px 0;
-	}
-
-	.btn__footer {
-		margin-bottom: 15px;
+	.copyright {
+		margin-top: 60px;
+		padding: 10px 0;
 	}
 }
 
@@ -617,6 +664,21 @@ h6 {
 	}
 }
 
+@media (max-width: 550px) {
+
+	.footer__item {
+		font-size: 11px;
+	}
+
+	.footer__title {
+		font-size: 16px;
+	}
+
+	.footer__title_social {
+		text-align: center;
+	}
+}
+
 @media (max-width: 440px) {
 	.nav {
 		font-size: 11px;
@@ -626,6 +688,10 @@ h6 {
 /* Extra small devices (small phones)*/
 
 @media (max-width: 375px) {
+
+	.header {
+		padding: 18px;
+	}
 
 	body {
 		font-size: 16px;
@@ -656,5 +722,42 @@ h6 {
 	.social__item {
 		margin-right: 0;
 
+	}
+
+	.footer__title {
+		font-size: 18px;
+		margin-bottom: 10px;
+		text-align: center;
+	}
+
+	.footer__item {
+		font-size: 12px;
+		text-align: center;
+	}
+
+	.footer__item:last-child {
+		margin-bottom: 20px;
+	}
+
+	.footer__inner {
+		display: flex;
+		flex-wrap: nowrap;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.footer__block {
+		width: 100%;
+		padding: 0;
+		height: auto;
+	}
+
+	.footer__title_social {
+		text-align: center;
+	}
+
+	.copyright {
+		margin-top: 60px;
+		padding: 10px 0;
 	}
 }
